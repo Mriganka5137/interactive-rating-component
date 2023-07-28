@@ -9,14 +9,14 @@ function Main({ setRating, setSubmit, rated }) {
   }
 
   return (
-    <div>
+    <>
       <img src={star} className="icon" alt="star icon" />
       <Description />
       <div className="list">
         {rating.map((rate, i) => (
           <button
-            style={{ backgroundColor: rate === rated ? "#fb7413" : "#252d37" }}
-            className="list-item"
+            // style={{ backgroundColor: rate === rated ? "#fb7413" : "#252d37" }}
+            className={rate !== rated ? "list-item" : "list-item-selected"}
             value={rate}
             key={i}
             onClick={() => {
@@ -31,7 +31,7 @@ function Main({ setRating, setSubmit, rated }) {
       <button className="btn" onClick={setSubmit}>
         SUBMIT
       </button>
-    </div>
+    </>
   );
 }
 
